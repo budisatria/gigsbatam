@@ -40,7 +40,7 @@ class EmailController extends Controller
 	        Mail::send('musician.auth.send', ['title' => 'Your Password Reset Link', 'token' => $token], function ($message) use ($email)
 	        {
 	        	$message->subject('Your Password Reset Link');
-	            $message->from('workstar4g@gmail.com', 'Admin GigsBatam');
+	            $message->from('gigsbatam@gmail.com', 'Admin GigsBatam');
 	            $message->to($email);
 	        });
 
