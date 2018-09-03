@@ -561,7 +561,7 @@ class SearchController extends Controller
                     }                   
                 }
 
-                if($finalid != null){
+                isset($finalid != null){
                     foreach ($finalid as $hasilakhir) {
                         $hasilcariband = Grupband::where('id', $hasilakhir)->where('aktif', 'Y')->first();
                         $idband[] = $hasilcariband;
@@ -686,7 +686,7 @@ class SearchController extends Controller
                         }                   
                     }
 
-                    if($finalid != null){
+                    isset($finalid != null){
                         foreach ($finalid as $hasilakhir) {
                             $hasilcariband = Grupband::where('id', $hasilakhir)->where('aktif', 'Y')->first();
                             $idband[] = $hasilcariband;
@@ -736,7 +736,7 @@ class SearchController extends Controller
                     }                   
                 }
 
-                if($finalid != null){
+                isset($finalid != null){
                     foreach ($finalid as $hasilakhir) {
                         $hasilcariband = Grupband::where('id', $hasilakhir)->where('aktif', 'Y')->first();
                         $idband[] = $hasilcariband;
