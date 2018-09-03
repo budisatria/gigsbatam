@@ -58,7 +58,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'terasdistro@gmail.com', 'name' => 'Admin Gighub'],
+    'from' => ['address' => 'gigsbatam@gmail.com', 'name' => 'Admin GigsBatam'],
 
     /*
     |--------------------------------------------------------------------------
