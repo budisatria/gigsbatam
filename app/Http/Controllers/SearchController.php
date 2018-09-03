@@ -26,7 +26,7 @@ class SearchController extends Controller
             if($input['Wilayah'] == null && $request->checkbox == null && $input['tanggal'] == null){              
                 $join = Musician::where('aktif', 'Y')->get();
                 return view('hasilcarimusisi')->with('listmusisi',$join);
-               // echo "NULL Wilayah, NULL CEKBOX, NULL TANGGAL";
+               // echo "NULL WILAYAH, NULL CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] == null && $request->checkbox == null && $input['tanggal'] != null){                            
                 $ceksewa = Sewa::join('gigs', 'sewas.gig_id', '=', 'gigs.id')
@@ -70,7 +70,7 @@ class SearchController extends Controller
                 }
 
                 return view('hasilcarimusisi')->with('listmusisi',$querycek);
-                //echo "NULL Wilayah, NULL CEKBOX, TERPILIH TANGGAL";
+                //echo "NULL WILAYAH, NULL CEKBOX, TERPILIH TANGGAL";
             }
             elseif($input['Wilayah'] == null && $request->checkbox != null && $input['tanggal'] == null){
                 $musisi = Musician::where('aktif', 'Y')->get();
@@ -114,7 +114,7 @@ class SearchController extends Controller
                 }
 
                 return view('hasilcarimusisi')->with('listmusisi',$idband);
-                //echo "NULL Wilayah, TERPILIH CEKBOX, NULL TANGGAL";
+                //echo "NULL WILAYAH, TERPILIH CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] == null && $request->checkbox != null && $input['tanggal'] != null){
                 
@@ -241,12 +241,12 @@ class SearchController extends Controller
 
                 return view('hasilcarimusisi')->with('listmusisi',$idband);
 
-                //echo "NULL Wilayah, TERPILIH CEKBOX, TERPILIH TANGGAL";
+                //echo "NULL WILAYAH, TERPILIH CEKBOX, TERPILIH TANGGAL";
             }
             elseif($input['Wilayah'] != null && $request->checkbox == null && $input['tanggal'] == null){
                 $join = Musician::where('aktif', 'Y')->where('Wilayah', $input['Wilayah'])->get();
                 return view('hasilcarimusisi')->with('listmusisi',$join);
-                //echo "TERPILIH Wilayah, NULL CEKBOX, NULL TANGGAL";
+                //echo "TERPILIH WILAYAH, NULL CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] != null && $request->checkbox != null && $input['tanggal'] == null){
                 $finalid = [];
@@ -292,7 +292,7 @@ class SearchController extends Controller
 
                 return view('hasilcarimusisi')->with('listmusisi',$idband);
 
-                //echo "TERPILIH Wilayah, TERPILIH CEKBOX, NULL TANGGAL";
+                //echo "TERPILIH WILAYAH, TERPILIH CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] != null && $request->checkbox == null && $input['tanggal'] != null){
                 $ceksewa = Sewa::join('gigs', 'sewas.gig_id', '=', 'gigs.id')
@@ -335,7 +335,7 @@ class SearchController extends Controller
                     $querycek = DB::select("SELECT id FROM  musicians");
                 }
 
-                //CEK Wilayah MUSISI
+                //CEK WILAYAH MUSISI
                 foreach ($querycek as $value) {
                     $id[] = $value->id;
                 }                    
@@ -344,7 +344,7 @@ class SearchController extends Controller
                 $musisi = Musician::whereIn('id', $id)->where('Wilayah', $input['Wilayah'])->get();
 
                 return view('hasilcarimusisi')->with('listmusisi',$musisi);
-                //echo "TERPILIH Wilayah, NULL CEKBOX, TERPILIH TANGGAL";
+                //echo "TERPILIH WILAYAH, NULL CEKBOX, TERPILIH TANGGAL";
             }
             else{
                 $finalid = [];
@@ -471,7 +471,7 @@ class SearchController extends Controller
                 }
 
                 return view('hasilcarimusisi')->with('listmusisi',$idband);
-                //echo "Wilayah, CEKBOX, TANGGAL TERPILIH";
+                //echo "WILAYAH, CEKBOX, TANGGAL TERPILIH";
             }
             //END KUMPULAN IF
             
@@ -485,7 +485,7 @@ class SearchController extends Controller
             if($input['Wilayah'] == null && $request->checkbox == null && $input['tanggal'] == null){              
                 $join = Grupband::where('aktif', 'Y')->get();
                 return view('hasilcari')->with('listband',$join);
-               // echo "NULL Wilayah, NULL CEKBOX, NULL TANGGAL";
+               // echo "NULL WILAYAH, NULL CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] == null && $request->checkbox == null && $input['tanggal'] != null){                            
                 $ceksewa = Sewa::join('gigs', 'sewas.gig_id', '=', 'gigs.id')
@@ -529,7 +529,7 @@ class SearchController extends Controller
                 }
 
                 return view('hasilcari')->with('listband',$querycek);
-                //echo "NULL Wilayah, NULL CEKBOX, TERPILIH TANGGAL";
+                //echo "NULL WILAYAH, NULL CEKBOX, TERPILIH TANGGAL";
             }
             elseif($input['Wilayah'] == null && $request->checkbox != null && $input['tanggal'] == null){
                 $musisi = Grupband::where('aktif', 'Y')->get();
@@ -571,7 +571,7 @@ class SearchController extends Controller
                 }
 
                 return view('hasilcari')->with('listband',$idband);
-                //echo "NULL Wilayah, TERPILIH CEKBOX, NULL TANGGAL";
+                //echo "NULL WILAYAH, TERPILIH CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] == null && $request->checkbox != null && $input['tanggal'] != null){
                 
@@ -699,12 +699,12 @@ class SearchController extends Controller
 
                 return view('hasilcari')->with('listband',$idband);
 
-                //echo "NULL Wilayah, TERPILIH CEKBOX, TERPILIH TANGGAL";
+                //echo "NULL WILAYAH, TERPILIH CEKBOX, TERPILIH TANGGAL";
             }
             elseif($input['Wilayah'] != null && $request->checkbox == null && $input['tanggal'] == null){
                 $join = Grupband::where('aktif', 'Y')->where('Wilayah', $input['Wilayah'])->get();
                 return view('hasilcari')->with('listband',$join);
-                //echo "TERPILIH Wilayah, NULL CEKBOX, NULL TANGGAL";
+                //echo "TERPILIH WILAYAH, NULL CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] != null && $request->checkbox != null && $input['tanggal'] == null){
                 
@@ -747,7 +747,7 @@ class SearchController extends Controller
 
                 return view('hasilcari')->with('listband',$idband);
 
-                //echo "TERPILIH Wilayah, TERPILIH CEKBOX, NULL TANGGAL";
+                //echo "TERPILIH WILAYAH, TERPILIH CEKBOX, NULL TANGGAL";
             }
             elseif($input['Wilayah'] != null && $request->checkbox == null && $input['tanggal'] != null){
                 $ceksewa = Sewa::join('gigs', 'sewas.gig_id', '=', 'gigs.id')
@@ -790,7 +790,7 @@ class SearchController extends Controller
                     $querycek = DB::select("SELECT id FROM  grupbands");
                 }
 
-                //CEK Wilayah MUSISI
+                //CEK WILAYAH MUSISI
                 foreach ($querycek as $value) {
                     $id[] = $value->id;
                 }                    
@@ -799,7 +799,7 @@ class SearchController extends Controller
                 $musisi = Grupband::whereIn('id', $id)->where('Wilayah', $input['Wilayah'])->get();
 
                 return view('hasilcari')->with('listband',$musisi);
-                //echo "TERPILIH Wilayah, NULL CEKBOX, TERPILIH TANGGAL";
+                //echo "TERPILIH WILAYAH, NULL CEKBOX, TERPILIH TANGGAL";
             }
             else{
                 $ceksewa = Sewa::join('gigs', 'sewas.gig_id', '=', 'gigs.id')
@@ -925,7 +925,7 @@ class SearchController extends Controller
                 }
 
                 return view('hasilcari')->with('listband',$idband);
-                //echo "Wilayah, CEKBOX, TANGGAL TERPILIH";
+                //echo "WILAYAH, CEKBOX, TANGGAL TERPILIH";
             }
             //END KUMPULAN IF
 
