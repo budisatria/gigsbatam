@@ -30,7 +30,7 @@ class EmailController extends Controller
     		$unik=str_random(54);
     		$t=time();
     		$token = $unik.$t;
-    		//$content = "Click here to reset your password: <a href='/password/reset/$token'>Click Here</a>";
+    		//$content = "Klik link ini ya untuk mereset password akun gigsbatam kamu, salam satu jiwa: <a href='/password/reset/$token'>Click Here</a>";
 
     		$reset = New Musicianpassreset;
 	        $reset->email = $email;
@@ -40,7 +40,7 @@ class EmailController extends Controller
 	        Mail::send('musician.auth.send', ['title' => 'Your Password Reset Link', 'token' => $token], function ($message) use ($email)
 	        {
 	        	$message->subject('Your Password Reset Link From GigsBatam');
-	            $message->from('gigsbatam@gmail.com', 'From Admin GigsBatam');
+	            $message->from('gigsbatam@gmail.com', 'Admin GigsBatam');
 	            $message->to($email);
 	        });
 
