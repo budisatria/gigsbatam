@@ -30,7 +30,7 @@ class EmailController extends Controller
     		$unik=str_random(54);
     		$t=time();
     		$token = $unik.$t;
-    		//$content = "Click here to reset your password: <a href='/password/reset/$token'>Click Here</a>";
+    		//$content = "Click Link ini untuk mereset password kamu ya,, salam satu jiwa: <a href='/password/reset/$token'>Click Here</a>";
 
     		$reset = New Musicianpassreset;
 	        $reset->email = $email;
