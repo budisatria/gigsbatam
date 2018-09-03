@@ -30,17 +30,17 @@ class EmailController extends Controller
     		$unik=str_random(54);
     		$t=time();
     		$token = $unik.$t;
-    		//$content = "Click Link ini untuk mereset password kamu ya,, salam satu jiwa: <a href='/password/reset/$token'>Click Here</a>";
+    		//$content = "Click here to reset your password: <a href='/password/reset/$token'>Click Here</a>";
 
     		$reset = New Musicianpassreset;
 	        $reset->email = $email;
 	        $reset->token = $token;
 	        $reset->save();
 
-	        Mail::send('musician.auth.send', ['title' => 'Your Password Reset Link', 'token' => $token], function ($message) use ($email)
+	        Mail::send('musician.auth.send', ['title' => 'Your Password Reset Link From GigsBatam', 'token' => $token], function ($message) use ($email)
 	        {
 	        	$message->subject('Your Password Reset Link');
-	            $message->from('gigsbatam@gmail.com', 'Admin GigsBatam');
+	            $message->from('gigsbatam@gmail.com', 'From Admin GigsBatam');
 	            $message->to($email);
 	        });
 
