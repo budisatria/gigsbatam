@@ -1,1 +1,1 @@
-Click here to reset your password: <a href="{{ $link = url('admin/password/reset', $token).'?email='.urlencode($user->getEmailForPasswordReset()) }}"> {{ $link }} </a>
+Klik link ini ya untuk mereset password akun admin gigsbatam kamu, salam satu jiwa: <a href="{{ $link = url('admin/password/reset', $token).'?email='.urlencode($user->getEmailForPasswordReset()) }}"> {{ $link }} </a>

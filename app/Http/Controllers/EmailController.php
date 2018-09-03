@@ -37,9 +37,9 @@ class EmailController extends Controller
 	        $reset->token = $token;
 	        $reset->save();
 
-	        Mail::send('musician.auth.send', ['title' => 'Your Password Reset Link From GigsBatam', 'token' => $token], function ($message) use ($email)
+	        Mail::send('musician.auth.send', ['title' => 'Your Password Reset Link', 'token' => $token], function ($message) use ($email)
 	        {
-	        	$message->subject('Your Password Reset Link');
+	        	$message->subject('Your Password Reset Link From GigsBatam');
 	            $message->from('gigsbatam@gmail.com', 'From Admin GigsBatam');
 	            $message->to($email);
 	        });
