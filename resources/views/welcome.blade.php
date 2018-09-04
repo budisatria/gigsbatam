@@ -102,7 +102,7 @@
                                 <option value="Jodoh">Jodoh</option>
                                 <option value="Pinuin">Pinuin</option>
                                 <option value="Nongsa">Nongsa</option>
-                                <option value="Botani">Botani</option>
+                                <option value="Botani">Botania</option>
                             </select>
                             </div>
 
