@@ -12,6 +12,36 @@ return array(
     |
     */
 
+    'cloudName'  => env('CLOUDINARY_CLOUD_NAME', 'musisibatam'),
+    'baseUrl'    => env('CLOUDINARY_BASE_URL', 'http://res.cloudinary.com/musisibatam'.env('CLOUDINARY_CLOUD_NAME')),
+    'secureUrl'  => env('CLOUDINARY_SECURE_URL', 'https://res.cloudinary.com/musisibatam'.env('CLOUDINARY_CLOUD_NAME')),
+    'apiBaseUrl' => env('CLOUDINARY_API_BASE_URL', 'https://api.cloudinary.com/v1_1/musisibatam'.env('CLOUDINARY_CLOUD_NAME')),
+    'apiKey'     => env('CLOUDINARY_API_KEY', '166882221131145'),
+    'apiSecret'  => env('CLOUDINARY_API_SECRET', 'VsJi8_MFye1k-UROwn8sTbSn_J8'),
+
+    'scaling'    => array(
+        'format' => 'png',
+        'width'  => 150,
+        'height' => 150,
+        'crop'   => 'fit',
+        'effect' => null
+    )
+
+);
+<?php
+
+return array(
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cloudinary API configuration
+    |--------------------------------------------------------------------------
+    |
+    | Before using Cloudinary you need to register and get some detail
+    | to fill in below, please visit cloudinary.com.
+    |
+    */
+
     'cloudName'  => env('CLOUDINARY_CLOUD_NAME'),
     'baseUrl'    => env('CLOUDINARY_BASE_URL', 'http://res.cloudinary.com/'.env('CLOUDINARY_CLOUD_NAME')),
     'secureUrl'  => env('CLOUDINARY_SECURE_URL', 'https://res.cloudinary.com/'.env('CLOUDINARY_CLOUD_NAME')),
